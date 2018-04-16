@@ -1,0 +1,73 @@
+<%
+/**
+ * Global locals (EJS)
+ * @typedef {object} locals
+ * @property {string} serverRender
+ * @property {asset} asset
+ * @property {string} lang
+ * @property {meta} meta
+ * @property {option} option
+ */
+
+/**
+ * @typedef {string} serverRender
+ */
+const serverRender = locals.serverRender || `<div id="app"></div>`;
+
+/**
+ * @typedef {object} asset
+ * @property {Array<string>} css
+ * @property {Array<string>} js
+ */
+const asset = locals.asset || {
+    css: ["/public/css/bundle.css"],
+    js: ["/public/js/bundle.js"]
+}
+
+/**
+ * @typedef {string} lang
+ */
+const lang = locals.lang || "en";
+
+/**
+ * @typedef {object} meta
+ * @property {string} description
+ * @property {string} keywords
+ * @property {string} title
+ */
+locals.meta = typeof locals.meta === "object" ? locals.meta : {};
+const meta = {
+    description: locals.meta.description || "Discloud - distributed multitarget file cloud",
+    keywords: locals.meta.keywords || "file, cloud, filestore, distributed",
+    title: locals.meta.title || "Discloud - distributed file cloud"
+}
+
+/**
+ * @typedef {object} option
+ * @property {boolean} yandexMetrika
+ */
+locals.option = typeof locals.option === "object" ? locals.option : {};
+const option = {
+    yandexMetrika: locals.option.yandexMetrika || false,
+}
+%>
+
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+    <% include head.ejs %>
+    <% for (const cssAsset of asset.css) { %>
+    <link rel="stylesheet" type="text/css" href="<%- cssAsset %>"/>
+    <% } %>
+</head>
+<body>
+<div class="app-container">
+    <%- serverRender %>
+</div>
+
+<% for (const jsAsset of asset.js) { %>
+<script src="<%- jsAsset %>"></script>
+<% } %>
+<% include script.ejs %>
+</body>
+</html>

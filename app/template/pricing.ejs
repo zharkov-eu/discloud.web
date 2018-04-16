@@ -1,0 +1,82 @@
+<%
+/**
+ * Global locals (EJS)
+ * @typedef {object} locals
+ * @property {string} lang
+ */
+
+/**
+ * @typedef {string} lang
+ */
+const lang = locals.lang || "en";
+
+/**
+ * @typedef {object} meta
+ * @property {string} description
+ * @property {string} keywords
+ * @property {string} title
+ */
+const meta = {
+    description: "Discloud - distributed multi target file cloud, tariff",
+    keywords: "file, cloud, file store, distributed, tariff, payment",
+    title: "Discloud | Tariff"
+}
+
+/**
+ * @typedef {object} option
+ * @property {boolean} yandexMetrika
+ */
+const option = {
+    yandexMetrika: true
+}
+%>
+
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+    <% include head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/public/css/index.bundle.css"/>
+</head>
+<body>
+<div>
+    <% include nav.ejs %>
+    <div class="container tariff">
+        <h1>Tariff plan</h1>
+        <div class="row tariff-row">
+            <div class="four columns">
+                <div class="tariff-offer">
+                    <span class="tariff__quota">100 GB</span>
+                    <a class="link">139 RUB / month</a>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="tariff-offer">
+                    <span class="tariff__quota">100 GB</span>
+                    <a class="link">139 RUB / month</a>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="tariff-offer">
+                    <span class="tariff__quota">100 GB</span>
+                    <a class="link">139 RUB / month</a>
+                </div>
+            </div>
+        </div>
+        <a class="button">Choose plan</a>
+        <div class="tariff-info">
+            <h2>Safety and access</h2>
+            <div class="row">
+                <div class="six columns"></div>
+                <div class="six columns"></div>
+            </div>
+            <div class="row">
+                <div class="six columns"></div>
+                <div class="six columns"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/js/index.bundle.js"></script>
+<% include script.ejs %>
+</body>
+</html>

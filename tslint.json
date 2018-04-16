@@ -1,0 +1,18 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "max-line-length": [true, 120],
+    "new-parens": true,
+    "no-arg": true,
+    "no-bitwise": false,
+    "no-conditional-assignment": true,
+    "no-consecutive-blank-lines": [true, 2],
+    "interface-over-type-literal": false,
+    "max-classes-per-file": [true, 10],
+    "no-console": [false],
+    "variable-name": ["allow-leading-underscore"],
+    "no-string-literal": false,
+    "member-ordering": false,
+    "semicolon": [true, "ignore-bound-class-methods"]
+  }
+}

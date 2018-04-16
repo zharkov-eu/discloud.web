@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'icon';
+  src:  url('/public/icon/font/icon.eot?hj253t');
+  src:  url('/public/icon/font/icon.eot?hj253t#iefix') format('embedded-opentype'),
+    url('/public/icon/font/icon.ttf?hj253t') format('truetype'),
+    url('/public/icon/font/icon.woff?hj253t') format('woff'),
+    url('/public/icon/font/icon.svg?hj253t#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-move-file:before {
+  content: "\e900";
+}
+.icon-search:before {
+  content: "\e901";
+}
+.icon-upload-file:before {
+  content: "\e902";
+}
+.icon-folder .path1:before {
+  content: "\e903";
+  color: rgb(0, 0, 0);
+}
+.icon-folder .path2:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-folder .path3:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-folder .path4:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-delete-folder .path1:before {
+  content: "\e907";
+  color: rgb(0, 0, 0);
+}
+.icon-delete-folder .path2:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-delete-folder .path3:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-delete-folder .path4:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-delete-folder .path5:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-delete-folder .path6:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-delete-file .path1:before {
+  content: "\e90d";
+  color: rgb(0, 0, 0);
+}
+.icon-delete-file .path2:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-delete-file .path3:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-delete-file .path4:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-delete-file .path5:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-delete-file .path6:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-plus-square:before {
+  content: "\e913";
+}
+.icon-user-plus:before {
+  content: "\e914";
+  color: #c471f3;
+}
+.icon-password:before {
+  content: "\e915";
+  color: #c471f4;
+}
+.icon-user:before {
+  content: "\e916";
+  color: #c471f4;
+}

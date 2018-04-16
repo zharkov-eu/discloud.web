@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "error_file": "./log/error.log",
+      "name": "discloud-webapp",
+      "out_file": "./log/app.log",
+      "script": "index.js"
+    }
+  ]
+}

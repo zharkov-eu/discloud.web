@@ -1,0 +1,89 @@
+<%
+/**
+ * Global locals (EJS)
+ * @typedef {object} locals
+ * @property {string} lang
+ */
+
+/**
+ * @typedef {string} lang
+ */
+const lang = locals.lang || "en";
+
+/**
+ * @typedef {object} meta
+ * @property {string} description
+ * @property {string} keywords
+ * @property {string} title
+ */
+const meta = {
+    description: "Discloud - distributed multi target file cloud",
+    keywords: "file, cloud, file store, distributed",
+    title: "Discloud - distributed file cloud"
+}
+
+/**
+ * @typedef {object} option
+ * @property {boolean} yandexMetrika
+ */
+const option = {
+    yandexMetrika: true
+}
+%>
+
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+    <% include head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/public/css/index.bundle.css"/>
+</head>
+<body>
+<div>
+    <% include nav.ejs %>
+    <div class="container signup">
+        <div class="row">
+            <div class="six columns">
+                <div class="signup-icon">
+                    <a href="/"><img src="/public/img/logo.png" alt="Discloud logo"/></a>
+                    <span class="signup-icon__text">One account to manage your data</span>
+                </div>
+                <div class="singup-icons">
+                    <img src="/public/icon/icon-message.png" alt="Message icon"/>
+                    <img src="/public/icon/icon-search.png" alt="Search icon"/>
+                    <img src="/public/icon/icon-calendar.png" alt="Calendar icon"/>
+                </div>
+                <div class="signup-text">
+                    <span>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
+                </div>
+            </div>
+            <div class="six columns">
+                <form class="form signup-form" method="post" action="/">
+                    <div class="form-heading">
+                        <span>Create Account</span>
+                        <i class="icon-user-plus"></i>
+                    </div>
+                    <div class="form-input">
+                        <i class="icon-user"></i>
+                        <input class="input-effect" type="text" name="username"/>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="form-input">
+                        <i class="icon-password"></i>
+                        <input class="input-effect" type="password" name="password"/>
+                        <label>Password</label>
+                    </div>
+                    <div class="form-input">
+                        <i class="icon-password"></i>
+                        <input class="input-effect" type="password" name="password"/>
+                        <label>Repeat Password</label>
+                    </div>
+                    <input type="submit" value="Sign Up"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/js/index.bundle.js"></script>
+<% include script.ejs %>
+</body>
+</html>

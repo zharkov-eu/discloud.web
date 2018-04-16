@@ -1,0 +1,57 @@
+<%
+/**
+ * Global locals (EJS)
+ * @typedef {object} locals
+ * @property {string} lang
+ */
+
+/**
+ * @typedef {string} lang
+ */
+const lang = locals.lang || "en";
+
+/**
+ * @typedef {object} meta
+ * @property {string} description
+ * @property {string} keywords
+ * @property {string} title
+ */
+const meta = {
+    description: "Discloud - distributed multi target file cloud",
+    keywords: "file, cloud, file store, distributed",
+    title: "Discloud - distributed file cloud"
+}
+
+/**
+ * @typedef {object} option
+ * @property {boolean} yandexMetrika
+ */
+const option = {
+    yandexMetrika: true
+}
+%>
+
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+    <% include head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/public/css/index.bundle.css"/>
+</head>
+<body>
+<div>
+    <% include nav.ejs %>
+    <div class="container index">
+        <div class="top">
+            <div class="top-background"><img src="/public/img/landing-top.jpg"/></div>
+            <div class="top-content">
+                <p class="top-content__top">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <a class="button top-content__button" href="/signup">Create your personal account</a>
+                <p class="top-content__bottom">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/js/index.bundle.js"></script>
+<% include script.ejs %>
+</body>
+</html>

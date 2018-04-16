@@ -1,0 +1,78 @@
+<%
+/**
+ * Global locals (EJS)
+ * @typedef {object} locals
+ * @property {string} lang
+ */
+
+/**
+ * @typedef {string} lang
+ */
+const lang = locals.lang || "en";
+
+/**
+ * @typedef {object} meta
+ * @property {string} description
+ * @property {string} keywords
+ * @property {string} title
+ */
+const meta = {
+    description: "Discloud - login to distributed multi target file cloud",
+    keywords: "file, cloud, file store, distributed, login",
+    title: "Discloud | Login"
+}
+
+/**
+ * @typedef {object} option
+ * @property {boolean} yandexMetrika
+ */
+const option = {
+    yandexMetrika: false
+}
+%>
+
+<!doctype html>
+<html class="login-html" lang="<%= lang %>">
+<head>
+    <% include head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/public/css/index.bundle.css"/>
+</head>
+<body>
+<div>
+    <div class="container login">
+        <form class="form login-form" method="post" action="/">
+            <div class="login-form__icon">
+                <a href="/"><img src="/public/img/logo.png"/></a>
+            </div>
+            <div class="form-input">
+                <i class="icon-user"></i>
+                <input class="input-effect" type="text" name="username"/>
+                <label for="username">Username</label>
+            </div>
+            <div class="form-input">
+                <i class="icon-password"></i>
+                <input class="input-effect" type="password" name="password"/>
+                <label>Password</label>
+            </div>
+            <div class="login-form__forgot">
+                <a class="link" href="/resetpwd">Forgot Password</a>
+            </div>
+            <input type="submit" value="Sign In"/>
+            <span class="login-form-text_supplied">
+                Or sign in using social media
+            </span>
+            <div class="login-form-icons">
+                <a href="/"><img src="/public/icon/icon-vk.png"/></a>
+                <a href="/"><img src="/public/icon/icon-facebook.png"/></a>
+            </div>
+            <div class="login-form-signup">
+                <span>Not signed up yet?</span>
+                <a class="link" href="/signup">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/public/js/index.bundle.js"></script>
+<% include script.ejs %>
+</body>
+</html>

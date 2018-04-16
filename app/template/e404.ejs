@@ -1,0 +1,60 @@
+<%
+/**
+ * Global locals (EJS)
+ * @typedef {object} locals
+ * @property {string} lang
+ */
+
+/**
+ * @typedef {string} lang
+ */
+const lang = locals.lang || "en";
+
+/**
+ * @typedef {object} meta
+ * @property {string} description
+ * @property {string} keywords
+ * @property {string} title
+ */
+const meta = {
+    description: "Discloud - Not Found",
+    keywords: "discloud, not found",
+    title: "Discloud | Not Found"
+}
+
+/**
+ * @typedef {object} option
+ * @property {boolean} yandexMetrika
+ */
+const option = {
+    yandexMetrika: false
+}
+%>
+
+<!doctype html>
+<html lang="<%= lang %>">
+<head>
+    <% include head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/public/css/index.bundle.css"/>
+</head>
+<body>
+    <% include nav.ejs %>
+    <div class="container e404">
+        <div class="row">
+            <div class="four columns">
+                <img src="/public/img/bunny-404.png" alt="Error bunny"/>
+            </div>
+            <div class="four columns">
+                <h1>Page not found</h1>
+                <h4>Error 404</h4>
+                <p>Seems like we can’t find the page you wanted.</p>
+                <a class="button" href="/">Go back</a>
+            </div>
+            <div class="four columns">
+            </div>
+        </div>
+    </div>
+<script src="/public/js/index.bundle.js"></script>
+<% include script.ejs %>
+</body>
+</html>

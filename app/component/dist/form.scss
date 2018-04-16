@@ -1,0 +1,142 @@
+// Mixin
+@mixin respond-to($media) {
+  @if $media == handhelds-fix {
+    @media only screen and (max-width: 40em) {
+      @content;
+    }
+    // max-width 640px, mobile-only styles
+  } @else if $media == medium-screens-fix {
+    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+      @content;
+    }
+    // min-width 641px and max-width 1024px
+  } @else if $media == medium-screens {
+    @media only screen and (max-width: 64em) {
+      @content;
+    }
+    // max-width 1024px
+  } @else if $media == wide-screens {
+    @media only screen and (min-width: 64.063em) {
+      @content;
+    }
+    // min-width 1025px
+  }
+}
+
+.form {
+  padding: 2rem;
+}
+
+.form-input {
+  background: #ffffff;
+  position: relative;
+  height: 5rem;
+  margin: 1.5rem 0;
+  width: 100%;
+  @include respond-to("medium-screens") {
+    height: 2rem;
+    margin: .75rem 0;
+  }
+}
+
+.form-input > i {
+  color: #bfbfbf;
+  position: absolute;
+  font-size: 2.5rem;
+  left: 3rem;
+  top: 1.5rem;
+  @include respond-to("medium-screens") {
+    font-size: 1rem;
+    top: .5rem;
+    left: .5rem;
+  }
+}
+
+.form > input[type="submit"] {
+  position: relative;
+  text-transform: none;
+  font-weight: 300;
+  background: #C471F4;
+  box-shadow: 0 10px 32px 0 rgba(196, 113, 244, 0.54);
+  border-radius: 100px;
+  font-size: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin: 1rem auto;
+  display: block;
+  padding: 0 30px;
+  height: 5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background .3s ease;
+  &:hover {
+    border: 1px solid #C471F4;
+  }
+}
+
+.form-input > select,
+.form-input > input[type="tel"],
+.form-input > input[type="text"],
+.form-input > input[type="email"],
+.form-input > input[type="number"],
+.form-input > input[type="password"] {
+  background: #ffffff;
+  opacity: .7;
+  border: 0;
+  border-bottom: 1px solid #C471F4;
+  color: #1a1a1a;
+  display: block;
+  font-size: 2rem;
+  font-weight: 300;
+  height: 5rem;
+  margin: 0;
+  outline: none;
+  padding: 0 0 0 7.5rem;
+  width: 100%;
+  &:focus {
+    border-color: #00569e;
+  }
+}
+
+.form-input > textarea {
+  border: 1px #bfbfbf solid;
+  padding: .5rem;
+  resize: none;
+  width: 100%;
+}
+
+.form-input > .input-effect {
+  transition: 0.4s;
+  background: transparent;
+}
+
+.form-input > .input-effect:focus, .input-effect_content.input-effect {
+  margin: 2rem 0 !important;
+}
+
+.form-input > .input-effect ~ label {
+  position: absolute;
+  left: 7.5rem;
+  font-weight: 300;
+  font-size: 2rem;;
+  top: 1.25rem;
+  color: #C471F4;
+  transition: 0.3s;
+  z-index: 1;
+  letter-spacing: 1px;
+  cursor: text;
+  @include respond-to("medium-screens") {
+    left: 2rem;
+    top: .4rem;
+    font-size: 1rem;
+  }
+}
+
+.form-input > .input-effect:focus ~ label, .input-effect_content.input-effect ~ label {
+  top: -1.5rem;
+  left: 0;
+  font-size: 1.25rem;
+  opacity: .7;
+  color: #C471F4;
+  transition: 0.3s;
+}
