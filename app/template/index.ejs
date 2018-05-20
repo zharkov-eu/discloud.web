@@ -6,9 +6,15 @@
  */
 
 /**
+ * Dictionary
+ * @typedef {Object} dictionary
+ * @property {Function} getText - возвращает  переведенный тест
+ */
+
+/**
  * @typedef {string} lang
  */
-const lang = locals.lang || "en";
+const lang = locals.lang || "ru";
 
 /**
  * @typedef {object} meta
@@ -17,9 +23,9 @@ const lang = locals.lang || "en";
  * @property {string} title
  */
 const meta = {
-    description: "Discloud - distributed multi target file cloud",
-    keywords: "file, cloud, file store, distributed",
-    title: "Discloud - distributed file cloud"
+    description: dictionary.getText("Discloud - distributed multi target file cloud"),
+    keywords: dictionary.getText("file, cloud, file store, distributed"),
+    title: dictionary.getText("Discloud - distributed file cloud")
 }
 
 /**
@@ -35,23 +41,32 @@ const option = {
 <html lang="<%= lang %>">
 <head>
     <% include head.ejs %>
-    <link rel="stylesheet" type="text/css" href="/public/css/index.bundle.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/index.bundle.css"/>
 </head>
 <body>
 <div>
     <% include nav.ejs %>
     <div class="container index">
         <div class="top">
-            <div class="top-background"><img src="/public/img/landing-top.jpg"/></div>
+            <div class="top-background"><img src="/img/landing-top.jpg"/></div>
             <div class="top-content">
-                <p class="top-content__top">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <a class="button top-content__button" href="/signup">Create your personal account</a>
-                <p class="top-content__bottom">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <div class="top-content__top">
+                    <p><%= dictionary.getText("Use our distributed file storage and your files will not be lost anymore") %></p>
+                    <p><%= dictionary.getText("Keep information in different regions and get access to it from any place where the Internet is available") %></p>
+                </div>
+                <a class="button top-content__button" href="/signup">
+                    <%= dictionary.getText("Create your personal account") %>
+                </a>
+                <div class="top-content__bottom">
+                    <p><%= dictionary.getText("Geographically distributed file storage") %></p>
+                    <p><%= dictionary.getText("Decentralized system") %></p>
+                    <p><%= dictionary.getText("Open source") %></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<script src="/public/js/index.bundle.js"></script>
+<script src="/js/index.bundle.js"></script>
 <% include script.ejs %>
 </body>
 </html>

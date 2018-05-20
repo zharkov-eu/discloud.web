@@ -13,6 +13,6 @@ function errorMiddlewareHandler(err, req: express.Request, res: express.Response
   }
 }
 
-export default function errorMiddleware() {
-  return errorMiddlewareHandler;
-}
+const errorMiddleware = () => errorMiddlewareHandler;
+
+export default errorMiddleware;

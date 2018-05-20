@@ -4,11 +4,12 @@ import * as express from "express";
 import * as http from "http";
 import * as path from "path";
 import errorMiddleware from "./app/midlleware/errorMiddleware";
+import languageMiddleware from "./app/midlleware/localizationMiddleware";
 import router from "./app/router";
 
 // noinspection TsLint
 const packageJson = require("./package.json");
-const port = parseInt(process.argv[0], 10) || process.env["NODE_PORT"] || 8000;
+const port = parseInt(process.argv[0], 10) || process.env["NODE_PORT"] || 3000;
 
 const app = express();
 const server = http.createServer(app);
@@ -19,7 +20,8 @@ app.set("view options", {
   rmWhitespace: true,
 });
 
-app.use("/public", express.static(path.join("public", "build")));
+app.use(languageMiddleware());
+
 app.use(router);
 app.use(errorMiddleware());
 

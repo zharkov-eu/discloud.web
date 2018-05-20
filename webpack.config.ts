@@ -1,63 +1,62 @@
 import * as path from "path";
 import * as webpack from "webpack";
 
+import CssoWebpackPlugin from "csso-webpack-plugin";
 import * as ExtractTextPlugin from "extract-text-webpack-plugin";
-import * as UglifyJSPlugin from "uglifyjs-webpack-plugin";
 
-const production = process.env["NODE_ENV"] === "production";
-const apiUrl = process.env["NODE_API_URL"] || production ? "api.discloud.ru" : "devapi.discloud.ru";
+const production = process.env.NODE_ENV === "production";
 
 const config: webpack.Configuration = {
-    entry: path.join(__dirname, "app", "component", "entrypoint", "index.ts"),
-    module: {
-        rules: [
-            {
-                exclude: /node_modules/,
-                test: /\.tsx?$/,
-                use: [
-                    {loader: "ts-loader"},
-                ],
-            },
-            {
-                test: /\.(css|scss)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: [
-                        {
-                            loader: "css-loader",
-                            options: {
-                                minimize: production,
-                            },
-                        }, {
-                            loader: "sass-loader",
-                        },
-                    ],
-                }),
-            },
+  entry: path.join(__dirname, "app", "component", "entrypoint", "index.ts"),
+  mode: production ? "production" : "development",
+  module: {
+    rules: [
+      {
+        exclude: /node_modules/,
+        test: /\.tsx?$/,
+        use: [
+          {loader: "ts-loader", options: {transpileOnly: !production}},
         ],
-    },
-    output: {
-        filename: "index.bundle.js",
-        path: path.resolve(__dirname, "public/build/js"),
-    },
-    plugins: production ? [
-        new ExtractTextPlugin("../css/index.bundle.css"),
-        new UglifyJSPlugin(),
-        new webpack.DefinePlugin({
-            "process.env": {
-                API_URL: JSON.stringify(apiUrl),
-                NODE_ENV: JSON.stringify("production"),
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            {
+              loader: "css-loader",
+            }, {
+              loader: "sass-loader",
             },
+          ],
         }),
-    ] : [
-        new ExtractTextPlugin("../css/index.bundle.css"),
-        new webpack.DefinePlugin({
-            "process.env": {
-                API_URL: JSON.stringify(apiUrl),
-                NODE_ENV: JSON.stringify("development"),
-            },
-        }),
+      },
     ],
+  },
+  output: {
+    filename: "index.bundle.js",
+    path: path.resolve(__dirname, "public/build/js"),
+  },
+  plugins: production ? [
+    new webpack.DefinePlugin({
+      "process.env": {
+        API_URL: JSON.stringify("https://api.discloud.ru"),
+        COOKIE_DOMAIN: JSON.stringify(".discloud.ru"),
+        NODE_ENV: JSON.stringify("production"),
+      },
+    }),
+    new ExtractTextPlugin("../css/index.bundle.css"),
+    new CssoWebpackPlugin(),
+  ] : [
+    new webpack.DefinePlugin({
+      "process.env": {
+        API_URL: JSON.stringify("https://api.discloud.ru"),
+        COOKIE_DOMAIN: JSON.stringify(".localhost.com"),
+        NODE_ENV: JSON.stringify("development"),
+      },
+    }),
+    new ExtractTextPlugin("../css/index.bundle.css"),
+  ],
 };
 
 export default config;

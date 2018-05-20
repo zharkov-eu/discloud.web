@@ -1,22 +1,36 @@
+<%
+/**
+ * Dictionary
+ * @typedef {Object} dictionary
+ * @property {Function} getText - возвращает  переведенный тест
+ */
+%>
+
 <nav>
     <div class="container">
         <div class="row">
             <div class="two columns nav-logo">
                 <a href="/">
-                    <img src="/public/img/logo.png" alt="Discloud logo"/>
+                    <img src="/img/logo.png" alt="Discloud logo"/>
                 </a>
             </div>
             <div class="five columns"></div>
             <div class="five columns">
                 <div class="row">
                     <div class="four columns">
-                        <a class="link" href="/pricing">Payment</a>
+                        <a class="link" href="/pricing">
+                            <%= dictionary.getText("Pricing") %>
+                        </a>
                     </div>
                     <div class="four columns">
-                        <a class="link" href="/signup">Sign Up</a>
+                        <a class="link" href="/signup">
+                            <%= dictionary.getText("Sign up") %>
+                        </a>
                     </div>
                     <div class="four columns">
-                        <a class="link sign-in" href="/login">Sign In</a>
+                        <a class="link sign-in" href="/login">
+                            <%= dictionary.getText("Sign in") %>
+                        </a>
                     </div>
                 </div>
             </div>

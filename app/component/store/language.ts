@@ -1,11 +1,7 @@
 "use strict";
 
 import {Reducer} from "redux";
-
-export enum LanguageEnum {
-  en = "English",
-  ru = "Russian",
-}
+import {LanguageEnum} from "../../interface/request";
 
 export interface ILanguageState {
   language: LanguageEnum;
@@ -28,5 +24,5 @@ export const reducer: Reducer<ILanguageState> = (state: ILanguageState, action: 
       return { language: action.language };
   }
 
-  return state || { language: LanguageEnum.ru };
+  return state || { language: LanguageEnum.RUSSIAN };
 };
