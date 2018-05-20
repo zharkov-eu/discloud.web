@@ -1,9 +1,14 @@
 "use strict";
 
 import * as express from "express";
+import IRequest from "../interface/request";
+import AbstractController from "./abstractController";
 
-export default class SignupController {
-  public async get(req: express.Request, res: express.Response) {
-      return res.render("signup", {lang: "en"});
+export default class SignupController extends AbstractController {
+  public get = async (req: IRequest, res: express.Response) => {
+    return res.render("signup", {
+      dictionary: AbstractController.Dictionary[req.language],
+      lang: req.language,
+    });
   }
 }

@@ -6,9 +6,15 @@
  */
 
 /**
+ * Dictionary
+ * @typedef {Object} dictionary
+ * @property {Function} getText - возвращает  переведенный тест
+ */
+
+/**
  * @typedef {string} lang
  */
-const lang = locals.lang || "en";
+const lang = locals.lang || "ru";
 
 /**
  * @typedef {object} meta
@@ -17,9 +23,9 @@ const lang = locals.lang || "en";
  * @property {string} title
  */
 const meta = {
-    description: "Discloud - login to distributed multi target file cloud",
-    keywords: "file, cloud, file store, distributed, login",
-    title: "Discloud | Login"
+    description: dictionary.getText("Discloud - distributed multi target file cloud"),
+    keywords: dictionary.getText("file, cloud, file store, distributed"),
+    title: dictionary.getText("Discloud - distributed file cloud")
 }
 
 /**
@@ -35,44 +41,46 @@ const option = {
 <html class="login-html" lang="<%= lang %>">
 <head>
     <% include head.ejs %>
-    <link rel="stylesheet" type="text/css" href="/public/css/index.bundle.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/index.bundle.css"/>
 </head>
 <body>
 <div>
     <div class="container login">
         <form class="form login-form" method="post" action="/">
             <div class="login-form__icon">
-                <a href="/"><img src="/public/img/logo.png"/></a>
+                <a href="/"><img src="/img/logo.png"/></a>
             </div>
             <div class="form-input">
                 <i class="icon-user"></i>
                 <input class="input-effect" type="text" name="username"/>
-                <label for="username">Username</label>
+                <label><%= dictionary.getText("Username") %></label>
             </div>
             <div class="form-input">
                 <i class="icon-password"></i>
                 <input class="input-effect" type="password" name="password"/>
-                <label>Password</label>
+                <label><%= dictionary.getText("Password") %></label>
             </div>
             <div class="login-form__forgot">
-                <a class="link" href="/resetpwd">Forgot Password</a>
+                <a class="link" href="/resetpwd">
+                    <%= dictionary.getText("Forgot password") %>
+                </a>
             </div>
-            <input type="submit" value="Sign In"/>
+            <input type="submit" value="<%= dictionary.getText("Sign up") %>"/>
             <span class="login-form-text_supplied">
-                Or sign in using social media
+                <%= dictionary.getText("Or sign in using social media") %>
             </span>
             <div class="login-form-icons">
-                <a href="/"><img src="/public/icon/icon-vk.png"/></a>
-                <a href="/"><img src="/public/icon/icon-facebook.png"/></a>
+                <a href="/"><img src="/icon/icon-vk.png"/></a>
+                <a href="/"><img src="/icon/icon-facebook.png"/></a>
             </div>
             <div class="login-form-signup">
-                <span>Not signed up yet?</span>
-                <a class="link" href="/signup">Sign Up</a>
+                <span><%= dictionary.getText("Not set up yet") + "?" %></span>
+                <a class="link" href="/signup"><%= dictionary.getText("Sign up") %></a>
             </div>
         </form>
     </div>
 </div>
-<script src="/public/js/index.bundle.js"></script>
+<script src="/js/index.bundle.js"></script>
 <% include script.ejs %>
 </body>
 </html>
