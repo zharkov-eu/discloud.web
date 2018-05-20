@@ -22,7 +22,7 @@ const serverRender = locals.serverRender || `<div id="app"></div>`;
 const asset = locals.asset || {
     css: ["/public/css/bundle.css"],
     js: ["/public/js/bundle.js"]
-}
+};
 
 /**
  * @typedef {string} lang
@@ -40,7 +40,7 @@ const meta = {
     description: locals.meta.description || "Discloud - distributed multitarget file cloud",
     keywords: locals.meta.keywords || "file, cloud, filestore, distributed",
     title: locals.meta.title || "Discloud - distributed file cloud"
-}
+};
 
 /**
  * @typedef {object} option
@@ -49,7 +49,7 @@ const meta = {
 locals.option = typeof locals.option === "object" ? locals.option : {};
 const option = {
     yandexMetrika: locals.option.yandexMetrika || false,
-}
+};
 %>
 
 <!doctype html>

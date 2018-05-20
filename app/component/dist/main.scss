@@ -42,17 +42,27 @@
   box-sizing: border-box;
 }
 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
 nav {
   border-bottom: 1px solid #DDDDDD;
   margin-bottom: 1rem;
 }
 
+nav > .container {
+  max-width: 1920px;
+  width: 100%;
+}
+
 nav .row {
-  height: 100px;
+  height: 6rem;
   .column,
   .columns {
     position: relative;
-    height: 100px;
+    height: 6rem;
   }
   .nav-logo img {
     position: absolute;
@@ -65,15 +75,15 @@ nav .row {
   a.link {
     display: block;
     position: absolute;
-    font-size: 20px;
-    color: #404040;
+    font-size: 1.2rem;
+    color: #101010;
     text-decoration: none;
     letter-spacing: 1px;
-    height: 65px;
-    line-height: 65px;
-    width: 75%;
+    height: 4rem;
+    line-height: 4rem;
+    width: 85%;
     text-align: center;
-    margin: 17.5px auto;
+    margin: 1rem auto;
     &:hover {
       color: #888888;
     }
@@ -83,14 +93,13 @@ nav .row {
     border-radius: 100px;
     &:hover {
       color: #404040;
-      box-shadow: 0 10px 32px 0 rgba(196,113,244,0.54);
+      box-shadow: 0 10px 16px 0 rgba(196,113,244,0.54);
     }
   }
 }
 
 a.link {
   text-decoration: none;
-  
   color: #C471F4;
 }
 
@@ -100,39 +109,36 @@ a.button {
   box-shadow: 0 10px 32px 0 rgba(196,113,244,0.54);
   border-radius: 100px;
   font-size: 1.25rem;
-  
   color: #FFFFFF;
 }
 
 .index {
-  .top {
-    position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+
+  p {
+    font-size: 1.25rem;
+    color: #404040;
+    margin-bottom: 0;
   }
 
-  .top .top-background {
-    position: absolute;
-    z-index: 1;
-    img {
-      width: 100%;
-      height: auto;
-    }
+  .top__preview {
+    text-align: left;
+    margin-left: 15%;
+    width: 30%;
+  }
+
+  .top {
+    height: 100%;
+    background: url("/img/landing-top.jpg") no-repeat center;
+    background-size: cover;
   }
 
   .top .top-content {
-    position: relative;
-    text-align: center;
-    z-index: 10;
-    height: 85vh;
-    p {
-      
-      font-size: 1.25rem;
-      color: #404040;
-    }
-    .top-content__top {
-      text-align: left;
-      margin-left: 15%;
-      width: 30%;
-    }
+    position: absolute;
+    width: 100%;
+    height: 100%;
     .top-content__button {
       position: absolute;
       top: 50%;
@@ -148,6 +154,12 @@ a.button {
       text-align: center;
       width: 30%;
     }
+  }
+
+  .top__postview {
+    text-align: left;
+    margin: 2.5rem 0 2.5rem 65%;
+    width: 30%;
   }
 }
 

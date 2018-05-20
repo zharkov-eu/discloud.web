@@ -1,64 +1,45 @@
 <%
-/**
- * Global locals (EJS)
- * @typedef {object} locals
- * @property {string} lang
- */
-
-/**
- * @typedef {string} lang
- */
 const lang = locals.lang || "en";
 
-/**
- * @typedef {object} meta
- * @property {string} description
- * @property {string} keywords
- * @property {string} title
- */
 const meta = {
-    description: "Discloud - distributed multi target file cloud, tariff",
-    keywords: "file, cloud, file store, distributed, tariff, payment",
-    title: "Discloud | Tariff"
-}
+    description: dictionary.getText("Discloud - distributed multi target file cloud, tariff"),
+    keywords: dictionary.getText("file, cloud, file store, distributed, tariff, payment"),
+    title: dictionary.getText("Discloud | Tariff")
+};
 
-/**
- * @typedef {object} option
- * @property {boolean} yandexMetrika
- */
 const option = {
     yandexMetrika: true
-}
+};
 %>
 
 <!doctype html>
 <html lang="<%= lang %>">
 <head>
     <% include head.ejs %>
-    <link rel="stylesheet" type="text/css" href="/public/css/index.bundle.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/index.bundle.css"/>
 </head>
 <body>
 <div>
     <% include nav.ejs %>
     <div class="container tariff">
-        <h1>Tariff plan</h1>
+        <h1><%= dictionary.getText("Pricing plan") %></h1>
         <div class="row tariff-row">
             <div class="four columns">
                 <div class="tariff-offer">
-                    <span class="tariff__quota">100 GB</span>
-                    <a class="link">139 RUB / month</a>
+                    <span class="tariff__quota"><%= dictionary.getText("{0} GB", 100) %></span>
+                    <a class="link"><%= dictionary.getText("{0} RUB / month", 139) %></a>
                 </div>
             </div>
             <div class="four columns">
                 <div class="tariff-offer">
-                    <span class="tariff__quota">100 GB</span>
-                    <a class="link">139 RUB / month</a>
+                    <span class="tariff__quota"><%= dictionary.getText("{0} GB", 100) %></span>
+                    <a class="link"><%= dictionary.getText("{0} RUB / month", 139) %></a>
                 </div>
             </div>
             <div class="four columns">
                 <div class="tariff-offer">
-                    <span class="tariff__quota">100 GB</span>
-                    <a class="link">139 RUB / month</a>
+                    <span class="tariff__quota"><%= dictionary.getText("{0} GB", 100) %></span>
+                    <a class="link"><%= dictionary.getText("{0} RUB / month", 139) %></a>
                 </div>
             </div>
         </div>
@@ -76,7 +57,7 @@ const option = {
         </div>
     </div>
 </div>
-<script src="/public/js/index.bundle.js"></script>
+<script src="/js/index.bundle.js"></script>
 <% include script.ejs %>
 </body>
 </html>

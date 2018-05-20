@@ -1,13 +1,19 @@
 "use strict";
 
 import * as express from "express";
+import IRequest from "../interface/request";
+import AbstractController from "./abstractController";
 
-export default class ErrorController {
-  public async get404(req: express.Request, res: express.Response) {
-    res.render("e404");
-  }
+export default class ErrorController extends AbstractController {
+  public get404 = async (req: IRequest, res: express.Response) => {
+    res.render("e404", {
+      dictionary: AbstractController.Dictionary[req.language],
+    });
+  };
 
-  public async get500(req: express.Request, res: express.Response) {
-    res.render("e500");
-  }
+  public get500 = async (req: IRequest, res: express.Response) => {
+    res.render("e500", {
+      dictionary: AbstractController.Dictionary[req.language],
+    });
+  };
 }

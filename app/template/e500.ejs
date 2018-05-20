@@ -1,60 +1,41 @@
 <%
-/**
- * Global locals (EJS)
- * @typedef {object} locals
- * @property {string} lang
- */
-
-/**
- * @typedef {string} lang
- */
 const lang = locals.lang || "en";
 
-/**
- * @typedef {object} meta
- * @property {string} description
- * @property {string} keywords
- * @property {string} title
- */
 const meta = {
-    description: "Discloud - Internal Server Error",
-    keywords: "discloud, internal server error",
-    title: "Discloud | Internal Server Error"
-}
+    description: dictionary.getText("Discloud - Internal Server Error"),
+    keywords: dictionary.getText("discloud, internal server error"),
+    title: dictionary.getText("Discloud | Internal Server Error")
+};
 
-/**
- * @typedef {object} option
- * @property {boolean} yandexMetrika
- */
 const option = {
     yandexMetrika: false
-}
+};
 %>
 
 <!doctype html>
 <html lang="<%= lang %>">
 <head>
     <% include head.ejs %>
-    <link rel="stylesheet" type="text/css" href="/public/css/index.bundle.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/index.bundle.css"/>
 </head>
 <body>
     <% include nav.ejs %>
     <div class="container e500">
         <div class="row">
             <div class="four columns">
-                <img src="/public/img/bunny-500.png" alt="Error bunny"/>
+                <img src="/img/bunny-500.png" alt="Error bunny"/>
             </div>
             <div class="four columns">
-                <h1>Internal Server Error</h1>
-                <h4>Error 500</h4>
-                <p>Sorry, unexpected error</p>
-                <a class="button" href="/">Go back</a>
+                <h1><%= dictionary.getText("Internal Server Error") %></h1>
+                <h4><%= dictionary.getText("Error 500") %></h4>
+                <p><%= dictionary.getText("Sorry, unexpected error") %></p>
+                <a class="button" href="/"><%= dictionary.getText("Go back") %></a>
             </div>
             <div class="four columns">
             </div>
         </div>
     </div>
-<script src="/public/js/index.bundle.js"></script>
+<script src="/js/index.bundle.js"></script>
 <% include script.ejs %>
 </body>
 </html>

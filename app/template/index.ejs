@@ -1,40 +1,15 @@
 <%
-/**
- * Global locals (EJS)
- * @typedef {object} locals
- * @property {string} lang
- */
-
-/**
- * Dictionary
- * @typedef {Object} dictionary
- * @property {Function} getText - возвращает  переведенный тест
- */
-
-/**
- * @typedef {string} lang
- */
 const lang = locals.lang || "ru";
 
-/**
- * @typedef {object} meta
- * @property {string} description
- * @property {string} keywords
- * @property {string} title
- */
 const meta = {
     description: dictionary.getText("Discloud - distributed multi target file cloud"),
     keywords: dictionary.getText("file, cloud, file store, distributed"),
     title: dictionary.getText("Discloud - distributed file cloud")
-}
+};
 
-/**
- * @typedef {object} option
- * @property {boolean} yandexMetrika
- */
 const option = {
     yandexMetrika: true
-}
+};
 %>
 
 <!doctype html>
@@ -44,26 +19,31 @@ const option = {
     <link rel="stylesheet" type="text/css" href="/css/index.bundle.css"/>
 </head>
 <body>
-<div>
-    <% include nav.ejs %>
-    <div class="container index">
-        <div class="top">
-            <div class="top-background"><img src="/img/landing-top.jpg"/></div>
-            <div class="top-content">
-                <div class="top-content__top">
-                    <p><%= dictionary.getText("Use our distributed file storage and your files will not be lost anymore") %></p>
-                    <p><%= dictionary.getText("Keep information in different regions and get access to it from any place where the Internet is available") %></p>
-                </div>
-                <a class="button top-content__button" href="/signup">
-                    <%= dictionary.getText("Create your personal account") %>
-                </a>
-                <div class="top-content__bottom">
-                    <p><%= dictionary.getText("Geographically distributed file storage") %></p>
-                    <p><%= dictionary.getText("Decentralized system") %></p>
-                    <p><%= dictionary.getText("Open source") %></p>
-                </div>
+<% include nav.ejs %>
+<div class="container index">
+    <div class="top__preview">
+        <p><%= dictionary.getText("Use our distributed file storage and your files will not be lost anymore") %>.</p>
+        <p><%= dictionary.getText("Keep information in different regions and get access to it from any place where the Internet is available") %>
+            .</p>
+    </div>
+    <div class="top">
+        <div class="top-content">
+            <a class="button top-content__button" href="/signup">
+                <%= dictionary.getText("Create your personal account") %>
+            </a>
+            <div class="top-content__bottom">
+                <p><%= dictionary.getText("Geographically distributed file storage") %>.</p>
+                <p><%= dictionary.getText("Decentralized system") %>.</p>
+                <p><%= dictionary.getText("Open source") %>.</p>
             </div>
         </div>
+    </div>
+    <div class="top__postview">
+        <p>
+            <%= dictionary.getText("Your organization can not store information in the \"cloud\"") %>?
+            <%= dictionary.getText("This is no longer a problem") %>!
+            <%= dictionary.getText("You can use our software on your servers") %>.
+        </p>
     </div>
 </div>
 <script src="/js/index.bundle.js"></script>

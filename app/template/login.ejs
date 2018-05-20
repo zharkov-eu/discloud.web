@@ -1,40 +1,15 @@
 <%
-/**
- * Global locals (EJS)
- * @typedef {object} locals
- * @property {string} lang
- */
-
-/**
- * Dictionary
- * @typedef {Object} dictionary
- * @property {Function} getText - возвращает  переведенный тест
- */
-
-/**
- * @typedef {string} lang
- */
 const lang = locals.lang || "ru";
 
-/**
- * @typedef {object} meta
- * @property {string} description
- * @property {string} keywords
- * @property {string} title
- */
 const meta = {
     description: dictionary.getText("Discloud - distributed multi target file cloud"),
     keywords: dictionary.getText("file, cloud, file store, distributed"),
     title: dictionary.getText("Discloud - distributed file cloud")
-}
+};
 
-/**
- * @typedef {object} option
- * @property {boolean} yandexMetrika
- */
 const option = {
     yandexMetrika: false
-}
+};
 %>
 
 <!doctype html>
