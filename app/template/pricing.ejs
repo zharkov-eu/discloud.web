@@ -43,16 +43,49 @@ const option = {
                 </div>
             </div>
         </div>
-        <a class="button">Choose plan</a>
+        <a class="button"><%= dictionary.getText("Choose plan") %></a>
         <div class="tariff-info">
-            <h2>Safety and access</h2>
+            <h2><%= dictionary.getText("Safety and access") %></h2>
             <div class="row">
-                <div class="six columns"></div>
-                <div class="six columns"></div>
+                <div class="six columns">
+                    <div class="three columns">
+                        <img src="/icon/icon-search.png" alt="Search icon"/>
+                    </div>
+                    <div class="nine columns">
+                        <span><%= dictionary.getText("Your file will be available as long as it is on at least one node") %>.</span>
+                        <span><%= dictionary.getText("Manage the level of replication to the accuracy of a specific node") %>.</span>
+                        <span><%= dictionary.getText("You know where your files are") %>.</span>
+                    </div>
+                </div>
+                <div class="six columns">
+                    <div class="three columns">
+                        <img src="/icon/icon-search.png" alt="Search icon"/>
+                    </div>
+                    <div class="nine columns">
+                        <span><%= dictionary.getText("Reduce the delays associated with geographical remoteness") %>.</span>
+                        <span><%= dictionary.getText("Place your files where they are more needed") %>.</span>
+                    </div>
+                </div>
             </div>
             <div class="row">
-                <div class="six columns"></div>
-                <div class="six columns"></div>
+                <div class="six columns">
+                    <div class="three columns">
+                        <img src="/icon/icon-search.png" alt="Search icon"/>
+                    </div>
+                    <div class="nine columns">
+                        <span><%= dictionary.getText("You do not have to store your files in the \"cloud\"") %>.</span>
+                        <span><%= dictionary.getText("You can use our solution with experience of thousands of users on your servers") %>.</span>
+                    </div>
+                </div>
+                <div class="six columns">
+                    <div class="three columns">
+                        <img src="/icon/icon-search.png" alt="Search icon"/>
+                    </div>
+                    <div class="nine columns">
+                        <span><%= dictionary.getText("All the main functionality of the file storage is implemented by using the open source model") %>.</span>
+                        <span><%= dictionary.getText("You can always check what you use") %>.</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

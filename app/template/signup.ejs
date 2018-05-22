@@ -36,33 +36,36 @@ const option = {
                     <img src="/icon/icon-calendar.png" alt="Calendar icon"/>
                 </div>
                 <div class="signup-text">
-                    <span>
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </span>
+                    <p>
+                        <%= dictionary.getText("All of your files are in one place") %>.
+                        <%= dictionary.getText("Quick search, filtering, archiving") %>.
+                        <%= dictionary.getText("If one node does not work it will not matter because as long as there is at least one node with your file it will be available to you") %>.
+                        <%= dictionary.getText("The access to the API you can can get here") %>.
+                    </p>
                 </div>
             </div>
             <div class="six columns">
                 <form class="form signup-form" method="post" action="/">
                     <div class="form-heading">
-                        <span>Create Account</span>
+                        <span><%= dictionary.getText("Create account") %></span>
                         <i class="icon-user-plus"></i>
                     </div>
                     <div class="form-input">
                         <i class="icon-user"></i>
                         <input class="input-effect" type="text" name="username"/>
-                        <label for="username">Username</label>
+                        <label><%= dictionary.getText("Username") %></label>
                     </div>
                     <div class="form-input">
                         <i class="icon-password"></i>
                         <input class="input-effect" type="password" name="password"/>
-                        <label>Password</label>
+                        <label><%= dictionary.getText("Password") %></label>
                     </div>
                     <div class="form-input">
                         <i class="icon-password"></i>
                         <input class="input-effect" type="password" name="password"/>
-                        <label>Repeat Password</label>
+                        <label><%= dictionary.getText("Repeat password") %></label>
                     </div>
-                    <input type="submit" value="Sign Up"/>
+                    <input type="submit" value="<%= dictionary.getText("Sign up") %>"/>
                 </form>
             </div>
         </div>

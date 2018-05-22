@@ -1,0 +1,23 @@
+{
+  "Search": "Поиск",
+  "Workspace": "Корневая директория",
+  "Add": "Добавить",
+  "New file": "Новый файл",
+  "New folder": "Новая папка",
+  "Folders": "Папки",
+  "Files": "Файлы",
+  "Delete folder": "Удалить папку",
+  "Delete file": "Удалить файл",
+  "Move file to": "Переместить файл в",
+  "Account": "Кабинет",
+  "Last opened": "Последние",
+  "Photos": "Фото",
+  "History": "История",
+  "Archive": "Архив",
+  "Deleted files": "Корзина",
+  "{0} out of {1}": "{0} из {1}",
+  "Drag’n’drop": "Перетащите файл",
+  "Page not found": "Страница не найдена",
+  "Seems like we can’t find the page you wanted": "Мы не можем найти запрашиваемую страницу",
+  "Go back": "Назад"
+}

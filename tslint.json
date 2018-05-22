@@ -2,6 +2,7 @@
   "extends": "tslint:recommended",
   "rules": {
     "max-line-length": [true, 120],
+    "curly": false,
     "new-parens": true,
     "no-arg": true,
     "no-bitwise": false,
