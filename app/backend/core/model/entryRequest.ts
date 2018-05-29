@@ -46,7 +46,7 @@ export default class EntryRequest implements IEntryRequest {
   @NotEmptyString()
   public permission?: string;
 
-  @IsMemberOf({array: [EntryShare.LINK]})
+  @IsMemberOf({array: [EntryShare.NONE, EntryShare.LINK]})
   public share?: EntryShare;
 
   @NotEmpty()

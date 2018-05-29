@@ -21,7 +21,7 @@ const option = {
 <body>
 <div>
     <% include nav.ejs %>
-    <div class="container signup">
+    <div id="signup" class="container signup">
         <div class="row">
             <div class="six columns">
                 <div class="signup-icon">
@@ -62,7 +62,7 @@ const option = {
                     </div>
                     <div class="form-input">
                         <i class="icon-password"></i>
-                        <input class="input-effect" type="password" name="password"/>
+                        <input class="input-effect" type="password" name="password-repeat"/>
                         <label><%= dictionary.getText("Repeat password") %></label>
                     </div>
                     <input type="submit" value="<%= dictionary.getText("Sign up") %>"/>
